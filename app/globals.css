@@ -6,3 +6,40 @@
 body {
   @apply bg-gray-100 text-gray-900;
 }
+
+/* Star animations for hero background */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.stars-1, .stars-2, .stars-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stars-1::before, .stars-2::before, .stars-3::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(255, 223, 128, 0.8);
+  border-radius: 50%;
+  box-shadow: 
+    10vw 10vh 1px rgba(255, 223, 128, 0.8),
+    20vw 20vh 1px rgba(255, 223, 128, 0.8),
+    30vw 30vh 1px rgba(255, 223, 128, 0.8),
+    40vw 40vh 1px rgba(255, 223, 128, 0.8),
+    50vw 50vh 1px rgba(255, 223, 128, 0.8),
+    60vw 60vh 1px rgba(255, 223, 128, 0.8),
+    70vw 70vh 1px rgba(255, 223, 128, 0.8),
+    80vw 80vh 1px rgba(255, 223, 128, 0.8),
+    90vw 90vh 1px rgba(255, 223, 128, 0.8);
+  animation: twinkle 8s infinite;
+  animation-delay: calc(var(--delay) * 1s);
+}
+
+.stars-1::before { --delay: 0; }
+.stars-2::before { --delay: 2; }
+.stars-3::before { --delay: 4; }
