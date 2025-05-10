@@ -16,6 +16,7 @@ export default function Menu() {
   // Add to order feedback
   const [showAddedToast, setShowAddedToast] = useState(false);
   
+  
   // Menu data structure with your requested categories
   const menuData = {
     healthy: [
